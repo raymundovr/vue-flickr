@@ -1,5 +1,5 @@
 export const getAPIURL = (text, maxResults = 10) => {
-  return `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4b7bd6ac426ec9b2b83bf69bc9eb70ba&format=json&nojsoncallback=1&text=${text}&per_page=${maxResults}`;
+  return `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.VUE_APP_APIKEY}&format=json&nojsoncallback=1&text=${text}&per_page=${maxResults}`;
 }
 
 const getPhotoUrl = ({farm, server, id, secret}) => {

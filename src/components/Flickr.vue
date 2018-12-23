@@ -15,7 +15,7 @@
 import {getAPIURL, getPhotosFromResponse} from '../utils.js';
 import log from '../mixins/log.js';
 export default {
-  name: "Flickr",
+  name: "Flickr",  
   data: function() {
     return {
       keyword: "",
@@ -42,6 +42,9 @@ export default {
     setActive: function (url) {      
       this.$emit('picture-clicked', url);      
     }
+  },
+  props: {
+    apiKey: String
   }
 }
 </script>
