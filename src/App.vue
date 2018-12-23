@@ -1,17 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h3>Search on Flickr</h3>
+    <Flickr v-on:picture-clicked="pictureClicked"/>
+    <Modal v-show="showModal" v-bind:url="modalUrl" v-on:modal-closed="closeModal" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Flickr from './components/Flickr.vue';
+import Modal from './components/Modal.vue';
+import log from './mixins/log.js';
 
 export default {
   name: 'app',
+  mixins: [log],
+  data: function () {
+    return {
+      showModal: false,
+      modalUrl: '',
+    }
+  },
+  created() {
+    //this.l('Hi!');
+  },
   components: {
-    HelloWorld
+    Flickr,
+    Modal
+  },
+  methods: {
+    pictureClicked: function(url) {
+      this.showModal = true;
+      this.modalUrl = url;
+    },
+    closeModal: function() {
+      this.showModal = false;
+      this.modalUrl = '';
+    }
   }
 }
 </script>
