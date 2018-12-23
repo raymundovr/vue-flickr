@@ -1,6 +1,6 @@
 # flickr-app
 This is a small app to see what VUE offers.
-Search on flickr, display results as flexbox and display a small modal when picture clicked.
+Search on flickr, display results as flexbox and show a small modal when picture clicked.
 Feel free to do anything.
 ## Project setup
 ```
